@@ -1,0 +1,214 @@
+Boru Customer 
+Home page >>>>
+D/parameters: http://dev.boru.in/api/v1/getbanner
+D/parameters: type  ===>  user
+D/parameters: http://dev.boru.in/api/v1/getcategory
+D/parameters: Latitude  ===>  19.1394148
+D/parameters: Longitude  ===>  72.928009
+D/parameters: http://dev.boru.in/api/v1/getsubscriber
+D/parameters: user_id  ===>  5
+D/parameters: https://cronjob.valueanalyzing.com/autoRejectOneTimeOrderAcceptedOrder.php
+D/parameters: https://cronjob.valueanalyzing.com/autoRejectOneTimeOrder.php
+D/parameters: https://cronjob.valueanalyzing.com/getAutoActivePauseSubscriber.php
+D/parameters: https://cronjob.valueanalyzing.com/autoRejectSubscribeOrder.php
+
+Billl>>>>one time bill
+D/parameters: http://dev.boru.in/api/v1/getbill
+D/parameters: user_id  ===>  5
+D/parameters: start_page  ===>  0
+D/parameters: bill_type  ===>  onetime
+
+Billl>>>subscribe billl
+D/parameters: http://dev.boru.in/api/v1/getbilldate
+D/parameters: user_id  ===>  5
+D/parameters: start_page  ===>  0
+D/parameters: bill_type  ===>  subscribe
+
+
+Orders>>>>one time order 
+D/parameters: http://dev.boru.in/api/v1/getonetimeorderdetail
+D/parameters: user_id  ===>  5
+D/parameters: start_page  ===>  0
+D/parameters: order_type  ===>  onetime
+
+
+D/parameters: http://dev.boru.in/api/v1/getbilldetail
+D/parameters: user_id  ===>  5
+D/parameters: order_id  ===>  14
+you have to pass language example :en ,hi,ma
+
+
+
+
+
+Orders >>>Subscribe orders
+D/parameters: http://dev.boru.in/api/v1/getsubscribeorders
+D/parameters: user_id  ===>  5
+D/parameters: start_page  ===>  0
+D/parameters: order_type  ===>  subscribe
+
+D/parameters: http://dev.boru.in/api/v1/foreditsubscribeorder
+D/parameters: user_id  ===>  5
+D/parameters: subscribe_id  ===>  11
+D/parameters: http://dev.boru.in/api/v1/updatesubscribeorder
+D/parameters: stop_end_date  ===>  Sun, 07-11-2021
+D/parameters: quantity  ===>  4
+D/parameters: user_id  ===>  5
+D/parameters: subscribe_type  ===>  Daily
+D/parameters: vendor_id  ===>  9
+D/parameters: stop_from_date  ===>  Sun, 07-11-2021
+D/parameters: subscribe_id  ===>  11
+
+D/parameters: http://dev.boru.in/api/v1/getpauseonesubscribe
+D/parameters: stop_end_date  ===>  Sun, 14-11-2021
+D/parameters: user_id  ===>  5
+D/parameters: stop_from_date  ===>  Mon, 08-11-2021
+D/parameters: subscribe_id  ===>  11
+D/parameters: http://dev.boru.in/api/v1/getresumeonesubscribe
+D/parameters: user_id  ===>  5
+D/parameters: subscribe_id  ===>  11
+
+D/parameters: http://dev.boru.in/api/v1/getclosesubscribe
+D/parameters: user_id  ===>  5
+D/parameters: subscribe_id  ===>  11
+
+
+Pause Page>>>>>
+D/parameters: http://dev.boru.in/api/v1/getpausedsubscribe
+D/parameters: user_id  ===>  5
+D/parameters: http://dev.boru.in/api/v1/getsubscriberforpause
+D/parameters: user_id  ===>  5
+
+
+Profile>>>>>
+D/parameters: http://dev.boru.in/api/v1/getprofile
+D/parameters: user_id  ===>  5
+
+
+
+Shop profile>>>>
+D/parameters: http://dev.boru.in/api/v1/getcategorybyvendor
+D/parameters: vendor_id  ===>  9
+D/parameters: http://dev.boru.in/api/v1/getproductsbyvendor
+D/parameters: vendor_id  ===>  9
+//sojwal add 
+user_id = 4
+D/parameters: http://dev.boru.in/api/v1/getvendorprofile
+D/parameters: vendor_id  ===>  9
+D/parameters: http://dev.boru.in/api/v1/getsubcribedproduct
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+
+D/parameters: http://dev.boru.in/api/v1/getproductsbycategory
+D/parameters: category_id  ===>  11
+D/parameters: vendor_id  ===>  9
+
+
+Add to cart Page>>>>>>>
+
+D/parameters: http://dev.boru.in/api/v1/getvendorproducts
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  96
+D/parameters: http://dev.boru.in/api/v1/getvendorproducts
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  96
+D/parameters: http://dev.boru.in/api/v1/getproductsbyvendor
+D/parameters: vendor_id  ===>  9
+D/parameters: http://dev.boru.in/api/v1/getsubcribedproduct
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: http://dev.boru.in/api/v1/getvendorproducts
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  96
+D/parameters: http://dev.boru.in/api/v1/getshippingaddress
+D/parameters: user_id  ===>  5
+D/parameters: http://dev.boru.in/api/v1/setshippingaddress
+D/parameters: area  ===>  abc
+D/parameters: building_name  ===>  dff
+D/parameters: land_mark  ===>  ddd
+D/parameters: address  ===>  A-9, Vinod Niwas,, Maharashtra Nagar,, Behind Mangatram Petrol Pump,, Bhandup West, Bhandup, Kanjurmarg West, Bhandup West, Mumbai, Maharashtra 400078, India
+D/parameters: user_id  ===>  5
+D/parameters: latitude  ===>  0.0
+D/parameters: house_no  ===>  vvv
+D/parameters: address_name  ===>  Home
+D/parameters: longitude  ===>  0.0
+D/parameters: http://dev.boru.in/api/v1/getvendorproducts
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  175
+D/parameters: http://dev.boru.in/api/v1/getshippingaddress
+D/parameters: user_id  ===>  5
+
+D/parameters: http://dev.boru.in/api/v1/setsubscriber
+D/parameters: quantity  ===>  1
+D/parameters: address  ===>  vvv, dff, ddd, A-9, Vinod Niwas,, Maharashtra Nagar,, Behind Mangatram Petrol Pump,, Bhandup West, Bhandup, Kanjurmarg West, Bhandup West, Mumbai, Maharashtra 400078, India
+D/parameters: user_id  ===>  5
+D/parameters: subscribe_type  ===>  Every Day
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  175
+D/parameters: address_id  ===>  5
+D/parameters: address_name  ===>  Home
+
+D/parameters: http://dev.boru.in/api/v1/addtocart
+D/parameters: amount  ===>  0555
+D/parameters: quantity  ===>  1
+D/parameters: user_id  ===>  5
+D/parameters: vendor_id  ===>  9
+D/parameters: product_id  ===>  175
+D/parameters: order_type  ===>  onetime
+D/parameters: order_id  ===>  0
+
+My cart >>>>>
+D/parameters: http://dev.boru.in/api/v1/getcart
+D/parameters: user_id  ===>  5
+D/parameters: order_id  ===>  14
+D/parameters: http://dev.boru.in/api/v1/placeorder
+D/parameters: extra_charge  ===>  0
+D/parameters: delivery_fee  ===>  0.00
+D/parameters: gst_amount  ===>  0
+D/parameters: address  ===>  vvv, dff, ddd, A-9, Vinod Niwas,, Maharashtra Nagar,, Behind Mangatram Petrol Pump,, Bhandup West, Bhandup, Kanjurmarg West, Bhandup West, Mumbai, Maharashtra 400078, India
+D/parameters: user_id  ===>  5
+D/parameters: total_amount  ===>  555.00
+D/parameters: grand_total  ===>  555.00
+D/parameters: order_id  ===>  14
+
+My vendors >>>>
+D/parameters: http://dev.boru.in/api/v1/myvendors
+D/parameters: user_id  ===>  5
+
+Manage address>>>>>
+D/parameters: http://dev.boru.in/api/v1/getshippingaddress
+D/parameters: user_id  ===>  5
+D/parameters: http://dev.boru.in/api/v1/getdeleteshippingaddress
+D/parameters: usa_id  ===>  5
+D/parameters: http://dev.boru.in/api/v1/getshippingaddress
+D/parameters: user_id  ===>  5
+
+
+Feedback>>>>
+D/parameters: http://dev.boru.in/api/v1/feedback
+D/parameters: email_id  ===>  fggg
+D/parameters: user_id  ===>  5
+D/parameters: first_name  ===>  Ffff
+
+Search >>>
+D/parameters: http://dev.boru.in/api/v1/getsearchhistory
+D/parameters: user_id  ===>  5
+D/parameters: http://dev.boru.in/api/v1/getsearchproductorshop
+D/parameters: product_name  ===>  sh
+D/parameters: http://dev.boru.in/api/v1/getsearchproductorshop
+D/parameters: product_name  ===>  sh
+D/parameters: http://dev.boru.in/api/v1/getsearchproductorshop
+D/parameters: product_name  ===>  shu
+D/parameters: http://dev.boru.in/api/v1/getsearchproductorshop
+D/parameters: product_name  ===>  shu
+
+
+
+
+
+
+
