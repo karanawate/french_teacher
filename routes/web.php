@@ -79,7 +79,9 @@ Route::get("blog-details/{id}",[UserController::class,'blog_details']);
 // Report card Routes 
 Route::resource("report-card",ReportcardController::class);
 Route::get("students", [StudentController::class, 'students']);
+
 Route::resource('assigments', AssigmentController::class);
+Route::get('myfunction', [AssigmentController::class, 'myfunction']);
 
 
 
