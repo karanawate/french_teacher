@@ -38,6 +38,7 @@ $res = Session::get('usersession');
 										<th>Title</th>
 										<th>Description</th>
 										<th>Download file</th>
+										<th>Date</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -56,6 +57,12 @@ $res = Session::get('usersession');
 												  height="50"
 												  width="50"
 												  >
+												</td>
+												<td>
+												@php 
+												$date = $Assigment->created_at;
+												@endphp
+												{{ \Carbon\Carbon::parse($date)->diffForHumans() }}
 												</td>
 											<td>
 												<a href="{{ route('assigments.edit', $Assigment->Assigment_Id)}}">

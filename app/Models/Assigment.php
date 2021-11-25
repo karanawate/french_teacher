@@ -22,12 +22,12 @@ class Assigment extends Model
      
     ]; 
 
-    // public $dates = [
-    //     'created_at',
-    //     'updated_at'
+    public $dates = [
+        'created_at',
+        'updated_at'
        
-    // ];
+    ];
 
-    public $timestamps = false;
+   
 
 }
