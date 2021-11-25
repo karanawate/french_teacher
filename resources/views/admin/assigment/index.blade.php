@@ -58,7 +58,7 @@ $res = Session::get('usersession');
 												  >
 												</td>
 											<td>
-												<a href="{{ route('assigments.edit', $Assigment->Assigment_Id);}}">
+												<a href="{{ route('assigments.edit', $Assigment->Assigment_Id)}}">
 													<i class="fadeIn animated bx bx-message-square-edit" style="font-size:30px;"></i>
 												</a>
 												<form action="{{ route('assigments.destroy',$Assigment->Assigment_Id)}}" method="POST">
