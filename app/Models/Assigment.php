@@ -7,26 +7,27 @@ class Assigment extends Model
 {
     use HasFactory;
     
-    public $table    = 'assigments';
+    public $table            = 'assigments';
 
-    protected  $primaryKey = 'Assigment_Id';
+    protected  $primaryKey   = 'Assigment_Id';
 
-    protected $guarded = [];
+    protected $guarded       = [];
 
-    public $fiilable = [
+    public $fiilable         = [
         'home_title',
         'description',
         'allocated_file',
         'start_time',
         'end_time'
-     
-    ]; 
+    ];
 
     public $dates = [
         'created_at',
         'updated_at'
-       
     ];
+
+    
+
 
    
 

@@ -146,5 +146,9 @@ class AssigmentController extends Controller
        }
     }
 
+    public function classShow(){
+        echo "Hello";
+    }
+
     
 }

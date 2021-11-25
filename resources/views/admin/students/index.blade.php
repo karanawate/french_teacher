@@ -9,6 +9,7 @@ $res = Session::get('usersession');
         align-content : center;
     }
 </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <body onload="info_noti()">
 	<!--wrapper-->
 	<div class="wrapper">
@@ -56,10 +57,8 @@ $res = Session::get('usersession');
                                                         @endif
                                                     <td>
                                                         <a href="#">
-                                                            <i class="fadeIn animated bx bx-message-square-edit" style="font-size:30px;"></i>
+                                                            <i class="fadeIn animated bx bx-message-square-edit" data-toggle="modal" data-target="#myModal{{$student->studId}}"  style="font-size:30px;"></i>
                                                         </a>
-                                                        <input type="hidden" name="testId" value="" >
-                                                        <button type="submit" name="submit" value="submit" class="fadeIn animated bx bx-trash-alt" style="font-size:30px;display: contents;"></button>
                                                     </td>
                                             </tr>
                                         @endforeach
@@ -68,6 +67,43 @@ $res = Session::get('usersession');
 							</table>
 						</div>
 					</div>
+					<div class="container">
+				<!-- popup start from here -->		
+				<h2>Modal Example</h2>
+				<!-- Trigger the modal with a button -->
+				<!-- Modal -->
+		@if($students)
+			@foreach($students as $student)
+				<div class="modal fade" id="myModal{{$student->studId}}" role="dialog">
+					<div class="modal-dialog">
+					
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+						
+						<h4 class="modal-title">Student-Information</h4>
+						</div>
+					
+						<div class="modal-body">
+							<div class="col-md-6">
+							Name:	{{ $student->studentName }}
+							</div>
+							<div class="col-md-6">
+							Number: {{ $student->studentMobile }}
+							</div>
+						</div>
+					
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+				<!-- popup start from here -->
+		@endforeach
+		@endif
+				</div>
 				</div>
 			   </div>
 			</div>
@@ -84,4 +120,6 @@ $res = Session::get('usersession');
 
 <script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 

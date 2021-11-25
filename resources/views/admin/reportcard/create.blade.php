@@ -28,59 +28,8 @@ $res = Session::get('usersession');
 									<h5 class="mb-0 text-danger">Create Testimonial</h5>
 								</div>
 								<hr>
-								<div class="col-md-12">
-									
-								<form class="row g-3" action="addtestimonial" method="post" enctype= multipart/form-data >
-								@csrf
-									<div class="col-md-6">
-										<label for="inputLastName1" class="form-label">Please provide rating on our product </label>
-										<div class="input-group"> 
-											<input type="hidden" name="testRate" value="" class="form-control " id="testRate" placeholder="" >
-												<div class = "con">
-										       <i class = "fa fa-star" aria-hidden = "true" id = "st1"></i>
-										       <i class = "fa fa-star" aria-hidden = "true" id = "st2"></i>
-										       <i class = "fa fa-star" aria-hidden = "true" id = "st3"></i>
-										       <i class = "fa fa-star" aria-hidden = "true" id = "st4"></i>
-										       <i class = "fa fa-star" aria-hidden = "true" id = "st5"></i>
-										     </div>
-											  </div>
-												<span style="color:red">@error('testRate'){{ $message }}@enderror</span>
-									  	  </div>
-											<div class="col-md-6">
-												<label for="inputLastName1" class="form-label">Upload Testimonial Image</label>
-												<div class="input-group"> 
-													<input type="file" name="testiImage" class="form-control border-start-0" id="inputLastName1" placeholder="" />
-												</div>
-												<span style="color:red">@error('testiImage'){{ $message }}@enderror</span>
-											</div>
-											<div class="col-md-6">
-												<label for="inputLastName1" class="form-label">Enter Testimonial Date</label>
-												 <div class="input-group"> 
-													<input type="date" name="testDate" value="" class="form-control" id="" placeholder="Testimonial Date" />
-												 </div>
-												 <span style="color:red">@error('testDate'){{ $message }}@enderror</span>
-										  	</div>
-											  <div class="col-md-6">
-												<label for="inputLastName1" class="form-label">Enter Parent Name</label>
-												 <div class="input-group"> 
-													<input type="text" name="parentName" value="" class="form-control" id="" placeholder="Enter parentName" />
-												 </div>
-												 <span style="color:red">@error('parentName'){{ $message }}@enderror</span>
-										  	</div>
-									  		
+								
 
-									  		<div class="col-md-12">
-												<div class="form-group">
-													<label>Description</label>
-													<textarea name="testDesc" col="10" row="10" id="editor2" contenteditable="true" class="inline-editor" style="border:black"></textarea>
-													</div>
-													<span style="color:red">@error('testDesc'){{ $message }}@enderror</span>
-											</div>
-											 <div class="col-12">
-												<button type="submit" name="submit" value="submit" class="btn btn-danger px-5">Submit</button>
-											</div>
-								  </form>
-								</div>
 							</div>
 						</div>
 					</div>
