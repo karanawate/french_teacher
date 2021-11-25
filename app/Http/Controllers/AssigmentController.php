@@ -111,7 +111,6 @@ class AssigmentController extends Controller
           {
             $imagefile = time().'-'.$request->home_title.'.'.$request->allocated_file->extension();
             $request->allocated_file->move(public_path('images'), $imagefile);
-            $imagefileupload = $imagefile;
           }else{
             $imagefile      = $oldimage;
           }

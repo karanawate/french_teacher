@@ -57,7 +57,7 @@ $res = Session::get('usersession');
                                                         @endif
                                                     <td>
                                                         <a href="#">
-                                                            <i class="fadeIn animated bx bx-message-square-edit" data-toggle="modal" data-target="#myModal{{$student->studId}}"  style="font-size:30px;"></i>
+                                                            <i class="fadeIn animated bx bx-message-square-edit " data-toggle="modal" data-target="#myModal{{$student->studId}}"  style="font-size:30px;"></i>
                                                         </a>
                                                     </td>
                                             </tr>
@@ -67,16 +67,12 @@ $res = Session::get('usersession');
 							</table>
 						</div>
 					</div>
-					<div class="container">
-				<!-- popup start from here -->		
-				<h2>Modal Example</h2>
-				<!-- Trigger the modal with a button -->
-				<!-- Modal -->
+				
+<!-- Modal -->
 		@if($students)
-			@foreach($students as $student)
+		   @foreach($students as $student)
 				<div class="modal fade" id="myModal{{$student->studId}}" role="dialog">
 					<div class="modal-dialog">
-					
 					<!-- Modal content-->
 					<div class="modal-content">
 						<div class="modal-header">
@@ -85,12 +81,24 @@ $res = Session::get('usersession');
 						</div>
 					
 						<div class="modal-body">
-							<div class="col-md-6">
-							Name:	{{ $student->studentName }}
+							<div class="row">
+							    <div class="col-md-6">
+								 Name:	{{ $student->studentName }}
+								 </div>
+								 <div class="col-md-6">
+								  Number: {{ $student->studentMobile }}
+								 </div>
 							</div>
-							<div class="col-md-6">
-							Number: {{ $student->studentMobile }}
+							<div class="row">
+							    <div class="col-md-6">
+								
+								 Class:	{{ $student->studentClass }}
+								 </div>
+								 <div class="col-md-6">
+								  Number: {{ $student->studentGender }}
+								 </div>
 							</div>
+						
 						</div>
 					
 						<div class="modal-footer">
@@ -100,10 +108,9 @@ $res = Session::get('usersession');
 					
 					</div>
 				</div>
-				<!-- popup start from here -->
-		@endforeach
+		    @endforeach
 		@endif
-				</div>
+<!-- popup start from here -->
 				</div>
 			   </div>
 			</div>
@@ -121,5 +128,5 @@ $res = Session::get('usersession');
 <script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
