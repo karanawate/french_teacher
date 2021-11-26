@@ -75,10 +75,12 @@ $res = Session::get('usersession');
 												</form>
 											</td>
 										</tr>
+										
 									  @endforeach
 									@endif
 								</tbody>
 							</table>
+							{{ $assigments->links() }}
 						</div>
 					</div>
 				</div>

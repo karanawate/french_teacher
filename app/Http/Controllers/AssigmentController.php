@@ -4,6 +4,7 @@ use App\Models\Assigment;
 use DB;
 use Session;
 use Redirect;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Carbon;
 use App\Http\Requests\assigmentRequest;
 use App\Http\Requests\assigmentupdateRequest;
@@ -21,7 +22,7 @@ class AssigmentController extends Controller
         $usersession = Session::get('usersession');
         if(!empty($usersession))
         {
-            $assigments = Assigment::all();
+            $assigments = Assigment::paginate(5);
             return view('admin.assigment.index', compact('assigments'));
         }else{
             return Redirect::to('admin-login');
