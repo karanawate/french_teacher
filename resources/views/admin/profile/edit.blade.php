@@ -3,6 +3,7 @@
 $res = Session::get('usersession');
 @endphp
 <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 <style type="text/css">
 	 .fa-star {
         font-size : 40px;
@@ -30,12 +31,14 @@ $res = Session::get('usersession');
 								</div>
 								<hr>
 								<div class="col-md-12">
+                                   
 									@if(Session::has('success'))
 									  <div class="alert alert-success alertbox">
 										{{ Session::get('success')}}
 									  </div>
 									@endif
 								<form class="row g-3" id="profile_update" >
+                                    <input type="hidden" value="{{ $res[0]->logId }}" name="logId" id="logId" />
 										 <div class="row">
 												<div class="col-md-6">
 													<label for="inputLastName1" class="form-label">Enter Mobile Number</label>
@@ -89,15 +92,13 @@ $res = Session::get('usersession');
 	@include('admin.footer');
 
 
-<script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
 <script>
     $('#profile_update').submit(function(event){
         event.preventDefault();
+        var logId    = $('#logId').val();   
         var UserMobile = $('#UserMobile').val();
         var UserName   = $('#UserName').val();
         var UserEmail  = $('#UserEmail').val();
@@ -106,12 +107,15 @@ $res = Session::get('usersession');
             type:'POST',
             data:{
                 _token:'{{ csrf_token() }}',
+                logId: logId,
                 UserMobile: UserMobile,
                 UserName: UserName,
                 UserEmail: UserEmail
-            },sucess:function(data)
+            },success:function(response)
             {
-                console.log(data);
+                @php Session::has('message') @endphp
+                alertify.set('notifier','position', 'top-right');
+                alertify.success("@php  echo Session::get('message') @endphp");
             },error:function(error){
                 console.log(error);
             }

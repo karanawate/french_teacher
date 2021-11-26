@@ -3,6 +3,7 @@
 $res = Session::get('usersession');
 @endphp
 <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 <style type="text/css">
 	 .fa-star {
         font-size : 40px;
@@ -103,7 +104,7 @@ $res = Session::get('usersession');
 	@include('admin.themestyle');
 	@include('admin.footer');
 
-
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

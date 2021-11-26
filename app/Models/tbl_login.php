@@ -11,6 +11,23 @@ class tbl_login extends Model
 {
     use HasFactory;
 
+    public $table = 'tbl_login';
+
+    protected  $primaryKey   = 'logId';
+    
+    public $fillable = [
+        'UserMobile',
+        'UserEmail',
+        'UserPassword',
+        'createDT',
+        'adminRole',
+        'adminStatus',
+        'UserName',
+        'adminRole'
+    ];
+
+    public $dates = false;
+
 
     function getUser($insertdata)
     {

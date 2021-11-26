@@ -1,7 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Http\Models\tbl_login;
+use Session;
+use Redirect;
+use DB;
+use App\Models\tbl_login;
 
 class ProfileController extends Controller
 {   
@@ -10,9 +13,24 @@ class ProfileController extends Controller
             return view('admin.profile.edit');
         }
         
-        public function profile_update()
+        public function profile_update(Request $request)
         {
-            // 
-            echo "Hello";
+            $usersession = Session::get('usersession');
+            if(!empty($usersession))
+            {
+                $query = DB::table('tbl_login')
+                         ->where('logId', $request->logId)
+                         ->update(
+                             [
+                                 'UserEmail'  => $request->UserEmail,
+                                 'UserMobile' => $request->UserMobile,
+                                 'UserName'   => $request->UserName
+                            ]
+                        );
+                        Session::flash('message', 'Profile Update Successfully'); 
+            }else
+            {
+
+            }
         }
 }
