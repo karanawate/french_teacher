@@ -2,11 +2,17 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+
 
 class Assigment extends Model
 {
     use HasFactory;
     
+    use SoftDeletes;
+
+
     public $table            = 'assigments';
 
     protected  $primaryKey   = 'Assigment_Id';
@@ -21,9 +27,10 @@ class Assigment extends Model
         'end_time'
     ];
 
-    public $dates = [
+    protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
+        'deleted_at'
     ];
 
     
