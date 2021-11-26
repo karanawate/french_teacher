@@ -214,7 +214,11 @@ $res = Session::get('usersession');
 							</div>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end">
-							<li><a class="dropdown-item" href="{{url('setting')}}"><i class="bx bx-cog"></i><span>Settings</span></a>
+							<li>
+								<a class="dropdown-item" href="{{url('setting')}}"><i class="bx bx-cog"></i><span>Settings</span></a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="{{url('profile')}}"><i class="bx bx-cog"></i><span>Profile</span></a>
 							</li>
 							<li>
 								<div class="dropdown-divider mb-0"></div>

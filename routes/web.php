@@ -5,6 +5,7 @@ use App\Http\Controllers\admin;
 use App\Http\Controllers\ReportcardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AssigmentController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +83,13 @@ Route::get("students", [StudentController::class, 'students']);
 
 Route::resource('assigments', AssigmentController::class);
 Route::get('myfunction', [AssigmentController::class, 'myfunction']);
+
+ /* profile */
+
+ Route::get('profile',[ProfileController::class, 'index']);
+ Route::post('profile-update',[ProfileController::class, 'profile_update']);
+ 
+
 
 
 
