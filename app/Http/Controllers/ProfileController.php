@@ -25,12 +25,12 @@ class ProfileController extends Controller
                                  'UserEmail'  => $request->UserEmail,
                                  'UserMobile' => $request->UserMobile,
                                  'UserName'   => $request->UserName
-                            ]
+                             ]
                         );
                         Session::flash('message', 'Profile Update Successfully'); 
             }else
             {
-
+                return redirect('admin-login');
             }
         }
 }
