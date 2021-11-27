@@ -146,9 +146,10 @@ class AssigmentController extends Controller
        }
     }
 
-    public function myprofiles()
-    {
-        $query = DB::select('select * from assigments');
+    public function myprofiles(Request $request)
+    {   
+        $Assigment_Id = $request->Assigment_Id;
+        $query = DB::select('select * from assigments where Assigment_Id = "'.$Assigment_Id.'" ');
         if($query)
         {
             return json_encode(
@@ -159,7 +160,7 @@ class AssigmentController extends Controller
                 )
                 );
             }else{
-             return jsond_encode(
+              return jsond_encode(
                 array(
                     'status'  =>false,
                     'message' =>'something went wrong'
