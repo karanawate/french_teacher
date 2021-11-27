@@ -146,8 +146,26 @@ class AssigmentController extends Controller
        }
     }
 
-    public function classShow(){
-        echo "Hello";
+    public function myprofiles()
+    {
+        $query = DB::select('select * from assigments');
+        if($query)
+        {
+            return json_encode(
+                array(
+                    'status'  =>true,
+                    'message' =>'Succesffully get data',
+                    'data'    =>$query
+                )
+                );
+            }else{
+             return jsond_encode(
+                array(
+                    'status'  =>false,
+                    'message' =>'something went wrong'
+                )
+                );
+        }    
     }
 
     

@@ -1,6 +1,29 @@
-done:create teacher profile and update filed adhar card name phone etc. and it should be  ajax 
-done:route should be sesessbile
-student delete but not acctual delete in database the deleted_at time stamp field updated 
+$query = DB::table('mytable')
+        ->where('', $id)
+        ->update([
+            'key' =>$request->value,
+            'key' =>$request->value,
+            'key' =>$request->value,
+            'key' =>$request->value,
+            'key' =>$request->value,
+            'key' =>$request->value,
+        ]);
+
+        return redirect()->back()->with('msg key', 'msg value');
+
+
+
+        $query =Login::update([
+            'key'=>$request->value;
+        ]);
+        
+
+        return redirect::to('my-login');
+
+        
+
+
+
 
 
 

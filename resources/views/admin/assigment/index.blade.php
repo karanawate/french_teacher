@@ -68,19 +68,18 @@ $res = Session::get('usersession');
 												<a href="{{ route('assigments.edit', $Assigment->Assigment_Id)}}">
 													<i class="fadeIn animated bx bx-message-square-edit" style="font-size:30px;"></i>
 												</a>
-												<form action="{{ route('assigments.destroy',$Assigment->Assigment_Id)}}" method="POST">
+												<form  onclick="return check()" action="{{ route('assigments.destroy',$Assigment->Assigment_Id)}}" method="POST">
 													@method('DELETE')
 													@csrf
 													<button type="submit"  value="submit"  name="submit" value="submit" class="fadeIn animated bx bx-trash-alt" style="font-size:30px;display: contents;"></button>
 												</form>
 											</td>
 										</tr>
-										
 									  @endforeach
 									@endif
 								</tbody>
 							</table>
-							{{ $assigments->links() }}
+							<div class="d-flex justify-content-end">{{ $assigments->links() }}<div>
 						</div>
 					</div>
 				</div>
@@ -106,7 +105,18 @@ $res = Session::get('usersession');
 			$('.alert-danger').remove();
 		}, 3000);
 	});
+
+	function check()
+	{
+		if(confirm("are you sure want to delete this assigment") == true)
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
 </script>
+
 
 
 
