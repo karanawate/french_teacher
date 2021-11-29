@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-    Route::get("myprofiles",[AssigmentController::class,'myprofiles']);
+Route::get("myprofiles",[AssigmentController::class,'myprofiles']);
 
 
 
