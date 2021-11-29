@@ -39,6 +39,11 @@
                         </div>
                         <span class="d-flex justify-content-end"><a href="#" id="getOtp">Get Otp</a></span>
 
+                        <div class="form-group mt-3" style="display:none" id="otpdiv">
+                            <input type="text"  name="UserPassword"  class="form-control" placeholder="Enter Otp please" >
+                            <span style="color:red">@error('UserPassword'){{ $message }}  @enderror</span>
+                        </div>
+
                         <div class="form-group mt-3">
                             <input type="text"  name="UserPassword" class="form-control" placeholder="Enter Password" >
                             <span style="color:red">@error('UserPassword'){{ $message }}  @enderror</span>
@@ -93,6 +98,7 @@
                             }else if(res == 1) 
                             {
                                 $.notify("Otp send on this mobile Number !", {animationType:"drop",align:"right", verticalAlign:"top",color: "#D44950"});
+                                $('#otpdiv').show();
                             }
                             else{
                                 $.notify("something went wrong !", {animationType:"drop",align:"right", verticalAlign:"top",color: "#D44950"});
