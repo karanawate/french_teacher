@@ -29,9 +29,6 @@
         <!-- /nav -->
         <!-- page wrapper starts -->
         <div id="page-wrapper">
-         
-           
-        
             <div class="register-lead-desktop" style="margin-right: 351px;">
                 <form  method="POST"  action="{{ url('login-check')}}">
                     {{ csrf_field() }}
@@ -49,7 +46,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
                             </div>
                             <div class="form-check form-switch col-md-6">
-                                <label class="form-check-label" for="flexSwitchCheckChecked"><a href="forgetpass">forgot password</a></label>
+                                <label class="form-check-label" for="flexSwitchCheckChecked"><a href="forget-password">forgot password</a></label>
                             </div>
 						</div>
 

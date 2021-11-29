@@ -94,6 +94,8 @@ Route::get('myfunction', [AssigmentController::class, 'myfunction']);
  Route::get('login',[StudentLogin::class,'index']);
  Route::post('login-check',[StudentLogin::class,'loginCheck']);
  Route::get('user-logout',[StudentLogin::class,'userLogout']);
+ Route::get('forget-password',[StudentLogin::class, 'forgetPassword']);
+ Route::post('otp-send',[StudentLogin::class,'otpSend']);
  
 
 

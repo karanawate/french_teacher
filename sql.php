@@ -1,8 +1,8 @@
 
 Login system create.
-  - proper validation,
-  - after login show name in sidebar
-  - mentioned name logout option. 
+  - Done  proper validation,
+  - Done  after login show name in sidebar
+  - Done  mentioned name logout option. 
 
 forgot password get otp send
  - otp button click show input box
@@ -13,6 +13,8 @@ vendor crud operation
 - create edit & update
 - validtion in train request method using
 -
+
+
 
  
 
