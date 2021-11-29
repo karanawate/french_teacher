@@ -1,3 +1,7 @@
+
+@php 
+ $usersession = Session::get('usersession');
+@endphp
 <!DOCTYPE html>
 <html lang="en">
     @include('header')
@@ -25,6 +29,9 @@
         <!-- /nav -->
         <!-- page wrapper starts -->
         <div id="page-wrapper">
+         
+           
+        
             <div class="register-lead-desktop" style="margin-right: 351px;">
                 <form  method="POST"  action="{{ url('login-check')}}">
                     {{ csrf_field() }}

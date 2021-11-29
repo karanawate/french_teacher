@@ -20,12 +20,79 @@ class StudentLogin extends Controller
         
         if(isset($_POST['submit']))
         {
-            $mobile_number = $request->studentMobile;
-            $UserPassword  = $request->UserPassword;
-            return redirect()->back();
+            $studentMobile = $request->studentMobile;
+            $UserPassword  = sha1($request->UserPassword);
+
+            $user  = DB::table('tbl_login')
+                      ->where('UserMobile', $studentMobile)
+                      ->where('UserPassword', $UserPassword)
+                      ->get();
+            if(!$user->isEmpty())
+            {
+                Session::put('usersession', $user);
+                return redirect()->back();
+            }else{
+                echo "something wrong";
+            }  
         }else
         {
             redirect::to('web.web_login');
         }
     }
+
+
+public function userLogout()
+{
+    $usersession = Session::get('usersession');
+      if($usersession)
+      {
+        Session::forget('usersession');
+        Session::flush();
+        return redirect::to('login');
+      }else
+      {
+        return redirect::to('login');
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

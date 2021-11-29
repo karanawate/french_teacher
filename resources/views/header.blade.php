@@ -30,4 +30,6 @@
     <link href="{{url('assets/styles/maincolors.css')}}" rel="stylesheet">
     <!-- LayerSlider CSS -->
     <link rel="stylesheet" href="{{ url('assets/vendor/layerslider/css/layerslider.css')}}">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>

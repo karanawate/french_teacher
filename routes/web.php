@@ -93,6 +93,7 @@ Route::get('myfunction', [AssigmentController::class, 'myfunction']);
  /*  student login */
  Route::get('login',[StudentLogin::class,'index']);
  Route::post('login-check',[StudentLogin::class,'loginCheck']);
+ Route::get('user-logout',[StudentLogin::class,'userLogout']);
  
 
 

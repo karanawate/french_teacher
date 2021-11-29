@@ -61,10 +61,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{('blogs')}}">Blogs</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{('login')}}">Login</a>
-                        </li>
+                        
+                        @if(Session::has('usersession'))
+                          @php  $usersession = Session::get('usersession') @endphp
+                            <div class="w3-dropdown-hover" style="margin-top:20px; border-radius:5px">
+                                <button class="w3-button w3-black">{{ $usersession[0]->UserName }}</button>
+                                <div class="w3-dropdown-content w3-bar-block w3-border">
+                                <a href="#" class="w3-bar-item w3-button">Profile</a>
+                                <a href="{{ url('user-logout') }}" class="w3-bar-item w3-button">Logout</a>
+                                </div>
+                            </div>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{('login')}}">Login</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
