@@ -87,17 +87,21 @@
                         success:function(res)
                         {
                             console.log(res);
+                            if(res == 2)
+                            {
+                                $.notify("Mobile Number Does not Exist !", {animationType:"drop",align:"right", verticalAlign:"top",color: "#D44950"});
+                            }else if(res == 1) 
+                            {
+                                $.notify("Otp send on this mobile Number !", {animationType:"drop",align:"right", verticalAlign:"top",color: "#D44950"});
+                            }
+                            else{
+                                $.notify("something went wrong !", {animationType:"drop",align:"right", verticalAlign:"top",color: "#D44950"});
+                            }
                         },
                         error:function(error)
                         {
                             console.log(error);
                         }   
-
-
-
-
-
-
 
                     })
                    

@@ -75,9 +75,20 @@ public function otpSend(Request $request)
         $message    = trim("is Your OTP for VEDIC TREE KIDS LEARNING APP login For further details please visit our website www.vedictreeschool.online");
         $otpNumber  = rand(0000,9999); 
         $res        = $this->sendwebsms($message,$otpNumber,$UserMobile);
+          if($res == 'Success')
+          {
+              /* otp send on this mobile no  */
+            echo "1";
+          }else{
+              /* something went wrong plese try again */
+              echo "3";
+          }
+          
     }else{
-        echo "MOBILE NO IS NOT FOUND";
+       /* if user not found */
+        echo "2";
     }
+
 }
 
 
