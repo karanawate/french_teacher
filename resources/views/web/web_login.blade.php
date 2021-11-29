@@ -26,13 +26,15 @@
         <!-- page wrapper starts -->
         <div id="page-wrapper">
             <div class="register-lead-desktop" style="margin-right: 351px;">
-                <form id="regform" method="POST" action="leadform">
+                <form  method="POST"  action="{{ url('login-check')}}">
                     {{ csrf_field() }}
                     <div class="form-group mt-3">
                         <input type="text" class="form-control" name="studentMobile" placeholder="Enter Mobile Number">
+                        <span style="color:red">@error('studentMobile') {{ $message }} @enderror</span>
                     </div>
                         <div class="form-group mt-3">
                             <input type="password"  name="UserPassword" class="form-control" placeholder="Enter Password " >
+                            <span style="color:red">@error('UserPassword'){{ $message }}  @enderror</span>
                         </div>
                         <div class="row">
                             <div class="form-check form-switch col-md-6">
@@ -47,7 +49,7 @@
                     <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary">Login</button>
                 </form>   
             </div>
-            <div class="register-lead-mobile">
+            <!-- <div class="register-lead-mobile">
                 <form id="log" method="POST" action="leadform">
                     <div class="form-group mt-3">
                         <input type="text" class="form-control" id="" name="studentName" placeholder="Enter Name of Your Child" required>
@@ -70,7 +72,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Register</button>
                 </form>   
-            </div>
+            </div> -->
             
                 <!-- /.row-->
             </section>
@@ -83,29 +85,4 @@
     @include('web_footer')
     <!--/ footer-->
    
-    <script>
-
-        $(document).ready(function(){
-            $("#submit").click(function(){
-                $.ajax({
-                    type:"POST",
-                    data:$("#regform").serialize(),
-                    url:"{{url('leadform')}}",
-                    success:function(res){
-                        if(res==1){
-                            $("#submit"). attr("disabled", true);
-                            $.notify('Thank you for contact us');
-                            location.reload();
-                        } else {
-                            $("#submit"). attr("disabled", false);
-                            $.notify('Sorry Something went wrong !');
-                            location.reload();
-                        }
-                    },
-                    error:function(error){
-                        console.log(error);
-                    }
-                });
-            });
-        });
-    </script>
+    
