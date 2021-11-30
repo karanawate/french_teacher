@@ -47,6 +47,7 @@
                             <input type="text"  name="UserPassword" class="form-control" placeholder="Enter Password" >
                             <span style="color:red">@error('UserPassword'){{ $message }}  @enderror</span>
                         </div>
+                        
                     <button type="submit" name="submit" id="submit" value="submit" class="btn btn-primary">Submit</button>
                 </form>   
             </div>

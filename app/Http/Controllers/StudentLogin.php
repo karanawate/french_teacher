@@ -8,6 +8,7 @@ use App\Http\Requests\loginRequest;
 use Redirect;
 use Session;
 use DB;
+use App\Http\Requests\logincheckRequest;
 class StudentLogin extends Controller
 {
     public function index()
@@ -103,11 +104,6 @@ public function otpSend(Request $request)
     }
 
 }
-
-
-
-
-
     function sendwebsms($message,$otpNumber,$UserMobile)
     {
 
@@ -179,8 +175,6 @@ public function otpSend(Request $request)
                          'UserMobile'    =>$request->UserMobile,
                          'UserPassword'  =>sha1($request->UserPassword)     
                 ]);
-
-
         if($update_query == 1)
         {
             Session::flash("success_update",'Password Updated Successfully');
