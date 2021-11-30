@@ -193,6 +193,7 @@ class UserController extends Controller
             $otpNumber       = rand(0000,9999);
 
             $result = tbl_login::checkMobile($UserMobile);
+          
             if($result==1){
                 $message = trim("is Your OTP for VEDIC TREE KIDS LEARNING APP login For further details please visit our website www.vedictreeschool.online");
 
@@ -210,9 +211,11 @@ class UserController extends Controller
                         'otpNumber'  		=> $otpNumber,
                         'user_OTP_Status'  	=> 1          //success sending sms
                         );
-
+                        
+                       
                     }
-                $res = tbl_otplogs::insertlogs($data_otp_array);  
+                   $res = tbl_otplogs::insertlogs($data_otp_array);  
+               
                 if($res==1){
                     echo "1";
                 }else{
@@ -262,6 +265,7 @@ class UserController extends Controller
 
 
     function otpnumbercheck(Request $request){
+        dd("Hello");
         $validated      =  $request->validate([
             'otpnumber' => 'required|digits:10', 
         ]);

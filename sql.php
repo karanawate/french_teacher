@@ -5,9 +5,9 @@ Login system create.
   - Done  mentioned name logout option. 
 
 forgot password get otp send
- - otp button click show input box
- - and validation check property_exist or not
- -  after login show dashbord of teacher
+ - Done otp button click show input box
+ - Done and validation check property_exist or not
+ - Done after login show dashbord of teacher
  
 vendor crud operation
 - create edit & update

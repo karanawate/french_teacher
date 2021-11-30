@@ -30,6 +30,16 @@
         <!-- page wrapper starts -->
         <div id="page-wrapper">
             <div class="register-lead-desktop" style="margin-right: 351px;">
+            @if(Session::has('success_update'))
+                <div class="alert alert-success">
+                    {{ Session::get('success_update') }}
+                </div>
+            @endif
+            @if(Session::has('user_danger'))
+                <div class="alert alert-danger">
+                    {{ Session::get('user_danger') }}
+                </div>
+            @endif
                 <form  method="POST"  action="{{ url('login-check')}}">
                     {{ csrf_field() }}
                     <div class="form-group mt-3">

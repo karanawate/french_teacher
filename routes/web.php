@@ -79,14 +79,13 @@ Route::get("blog-details/{id}",[UserController::class,'blog_details']);
 
 
 // Report card Routes 
-Route::resource("report-card",ReportcardController::class);
-Route::get("students", [StudentController::class, 'students']);
+  Route::resource("report-card",ReportcardController::class);
+  Route::get("students", [StudentController::class, 'students']);
 
-Route::resource('assigments', AssigmentController::class);
-Route::get('myfunction', [AssigmentController::class, 'myfunction']);
+  Route::resource('assigments', AssigmentController::class);
+  Route::get('myfunction', [AssigmentController::class, 'myfunction']);
 
  /* profile */
-
  Route::get('profile',[ProfileController::class, 'index']);
  Route::post('profile-update',[ProfileController::class, 'profile_update']);
 
@@ -96,6 +95,8 @@ Route::get('myfunction', [AssigmentController::class, 'myfunction']);
  Route::get('user-logout',[StudentLogin::class,'userLogout']);
  Route::get('forget-password',[StudentLogin::class, 'forgetPassword']);
  Route::post('otp-send',[StudentLogin::class,'otpSend']);
+ Route::post('otp_check_number_valid',[StudentLogin::class,'otp_check_number']);
+ Route::post('login-check-user',[StudentLogin::class,'loginCheckUser']);
  
 
 

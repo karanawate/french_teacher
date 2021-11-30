@@ -32,6 +32,7 @@ class StudentLogin extends Controller
                     return redirect()->back();
                 }else{
                     echo "something wrong";
+                    return redirect()->back()->with('user_danger','Password Credentials Wrog Please Try Again');
                 }  
         }else
         {
@@ -78,10 +79,22 @@ public function otpSend(Request $request)
           if($res == 'Success')
           {
               /* otp send on this mobile no  */
-            echo "1";
+              echo "1";
+              $query = DB::table('logsotps')->insert([
+                  'UserMobile'       => $UserMobile,
+                  'otpNumber'        =>$otpNumber,
+                  'user_OTP_Status'  =>1
+              ]);
+
           }else{
               /* something went wrong plese try again */
               echo "3";
+              $query = DB::table('logsotps')->insert([
+                'UserMobile'       => $UserMobile,
+                'otpNumber'        =>$otpNumber,
+                'user_OTP_Status'  => 3
+            ]);
+
           }
           
     }else{
@@ -90,6 +103,8 @@ public function otpSend(Request $request)
     }
 
 }
+
+
 
 
 
@@ -129,46 +144,55 @@ public function otpSend(Request $request)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     
 
 
 
+    public function otp_check_number(Request $request)
+    {
+         $otpNumber = $request->otpNumber;
+         $query     = DB::table('logsotps')
+                    ->where('otpNumber', $otpNumber)
+                    ->where('user_OTP_Status',1)
+                    ->get();
+         if(!$query->isEmpty())
+         {
+             /* varified user */
+            echo "5";
 
+         }else
+         {
+             // otp not be varified
+            echo "6";
+         }           
+
+    }
+
+    public function loginCheckUser(Request $request)
+    {
+        
+        $update_query = DB::table('tbl_login')
+                      ->where('UserMobile',$request->UserMobile)
+                      ->update([
+                         'UserMobile'    =>$request->UserMobile,
+                         'UserPassword'  =>sha1($request->UserPassword)     
+                ]);
+
+
+        if($update_query == 1)
+        {
+            Session::flash("success_update",'Password Updated Successfully');
+            return Redirect::to('login');
+        }else
+        {
+            Session::flash('success_update','Something went wrong');
+            return redirect::to('login');
+        }
+
+
+    }
 
 
 

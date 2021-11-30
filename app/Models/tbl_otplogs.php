@@ -9,6 +9,8 @@ class tbl_otplogs extends Model
 {
     use HasFactory;
 
+    
+
     function insertlogs($insertdata){
 
         $blogsData = new tbl_otplogs;
@@ -22,7 +24,7 @@ class tbl_otplogs extends Model
             return 0;
         }
         
-    }
+    }   
 
     function otpnumbercheck($otpnumber){
         $res = DB::table('tbl_otplogs')->where('otpnumber',$otpnumber)->get();

@@ -89,6 +89,7 @@
         $("#getotp").click(function(){
             
             var UserMobile = $("#UserMobile").val();
+          
             if(UserMobile=="" || UserMobile==null ){
                 $("#errormsg").html("Mobile Number is required").css("color","red");
             }else if(isNaN(UserMobile)){
