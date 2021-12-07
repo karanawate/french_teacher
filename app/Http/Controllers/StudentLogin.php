@@ -22,11 +22,11 @@ class StudentLogin extends Controller
         {
             $studentMobile = $request->studentMobile;
             $UserPassword  = sha1($request->UserPassword);
+
             $user  = DB::table('tbl_login')
                       ->where('UserMobile', $studentMobile)
                       ->where('UserPassword', $UserPassword)
                       ->get();
-
                 if(!$user->isEmpty())
                 {
                     Session::put('usersession', $user);
@@ -188,6 +188,48 @@ public function otpSend(Request $request)
 
     }
 
+
+    public function getUsers(Request $request)
+    {
+        $users = DB::table("students")
+                     ->get();
+        if($users)
+        {
+            return json_encode(array(
+                "status"   =>true,
+                "message"  =>"users data found Successfully",
+                "data"     =>$users
+            ));
+        }else{
+            json_encode(array(
+                "status"  =>false,
+                "message" =>'data not found ' 
+            ));
+        }
+        // echo "Hello";
+    }
+
+    public function getUser(Request $request)
+    {
+        $studId = $request->studId;
+       $user = DB::table('students')
+             ->where('studId',$studId)
+             ->get();  
+        if($user)
+        {
+            return json_encode(array(
+                "status"   =>true,
+                "message"  =>"user data found Successfully",
+                "data"     =>$user
+            ));
+        }else{
+            json_encode(array(
+                "status"  =>false,
+                "message" =>'data not found ' 
+            ));
+        }
+        // echo "Hello";
+    }
 
 
 

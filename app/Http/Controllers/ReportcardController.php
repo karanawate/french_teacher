@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Reportcard;
+use DB;
+use Session;
+use Redirect;
 use Illuminate\Http\Request;
 
 class ReportcardController extends Controller
@@ -12,7 +15,8 @@ class ReportcardController extends Controller
      */
     public function index()
     {
-        return view('admin.reportcard.index');
+        $students  = DB::table('students')->get();
+        return view('admin.reportcard.index', compact('students'));
     }
 
     /**
@@ -22,7 +26,9 @@ class ReportcardController extends Controller
      */
     public function create()
     {
-        return view('admin.reportcard.create');
+        $cards = DB::table('report_cards')
+                ->get();
+        return view('admin.reportcard.create', compact('cards'));
     }
 
     /**
@@ -33,7 +39,39 @@ class ReportcardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        if(isset($_POST['submit']))
+        {  
+            $query = Reportcard::create([
+                'first_que'    => $request->first_que,
+                'second_que'   => $request->second_que,
+                'third_que'    => $request->third_que,
+                'four_que'     => $request->four_que,
+                'five_que'     => $request->five_que,
+                'six_que'      => $request->six_que,
+                'seven_que'    => $request->seven_que,
+                'eight_que'    => $request->eight_que,
+                'nine_que'     => $request->nine_que,
+                'nine_que'     => $request->nine_que,
+                'ten_que'      => $request->ten_que,
+                'eleven_que'   => $request->eleven_que,
+                'tweele_que'   => $request->tweele_que,
+                'threen_que'   => $request->threen_que,
+                'english'      => $request->english,
+                'maths'        => $request->maths,
+                'hindi'        => $request->hindi,
+                'dev_one'      => $request->dev_one,
+                'dev_two'      => $request->dev_two,
+                'dev_three'    => $request->dev_three,
+                'dev_four'     => $request->dev_four
+            ]);
+
+            return redirect()->back()->with('success','Report card Added Successfully');
+
+        }else
+        {
+            redirect::to('admin-login');
+        }
     }
 
     /**
@@ -80,4 +118,14 @@ class ReportcardController extends Controller
     {
         //
     }
+
+
+    public function  viewReportcard(Request $request)
+    {
+        $studId = $request->studId;
+        $userreport_detail  = DB::table('report_first_term')
+                ->where('fk_studId',$studId)
+                ->get();
+       return view('admin.reportcard.grade', compact('userreport_detail'));
+    }   
 }

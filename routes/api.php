@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssigmentController;
+use App\Http\Controllers\StudentLogin;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,7 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get("myprofiles",[AssigmentController::class,'myprofiles']);
+/*  Profile users */
+Route::get('users', [StudentLogin::class, 'getUsers']);
+Route::get("user/{id}", [StudentLogin::class, 'getUser']);
+
 
 
 

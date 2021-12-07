@@ -30,28 +30,36 @@ $res = Session::get('usersession');
 								<thead>
 									<tr>
 										<th>Id</th>
-										<th>Star</th>
-										<th>Testimonial Image</th>
-										<th>Testimonial Description</th>
-										<th>Testimonial Date</th>
+										<th>Student Name</th>
+										<th>Mobile Number</th>
+										<th>createDT</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-                                    <tr>
+									
+									@if($students)
+									  @php $i = 1; @endphp
+									  @foreach($students as $student)
+										<tr>
+										<td>{{ $i++; }}</td>
+										<td>{{ $student->studentName }}</td>
+										<td>{{ $student->studentMobile }}</td>
+										<td>{{ $student->createDT }}</td>
 										<td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>1</td>
-                                            <td>
-                                                <a href="#">
-                                                    <i class="fadeIn animated bx bx-message-square-edit" style="font-size:30px;"></i>
-                                                </a>
-												<input type="hidden" name="testId" value="" >
-												<button type="submit" name="submit" value="submit" class="fadeIn animated bx bx-trash-alt" style="font-size:30px;display: contents;"></button>
-									        </td>
-									</tr>
+										
+										<form action="{{ url('view-reportcard')}}" method="post">
+											<input type="hidden" value="{{$student->studId }}" name="studId" />
+											<input type="hidden" value="{{$student->studentClass }}" name="studentClass" />
+											@csrf
+											<button type="submit" class="btn btn-primary" name="submit" value="submit" >
+												View-Reportcard
+											</button>
+										</form>
+										</td>
+										</tr>
+										@endforeach	
+									@endif
 								</tbody>
 							</table>
 						</div>
