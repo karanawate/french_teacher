@@ -206,15 +206,16 @@ public function otpSend(Request $request)
                 "message" =>'data not found ' 
             ));
         }
-        // echo "Hello";
+        
     }
 
     public function getUser(Request $request)
     {
-        $studId = $request->studId;
+       $studId = $request->studId;
        $user = DB::table('students')
              ->where('studId',$studId)
              ->get();  
+
         if($user)
         {
             return json_encode(array(
@@ -228,7 +229,7 @@ public function otpSend(Request $request)
                 "message" =>'data not found ' 
             ));
         }
-        // echo "Hello";
+        
     }
 
 
