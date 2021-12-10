@@ -275,7 +275,7 @@ $res = Session::get('usersession');
 										<div >
 											<div class="col-md-12 ">
 											<label for="username">Remark</label><span style="color:red">*</span>
-											<div class="grade-align ">
+											<div class="grade-align">
 												@foreach($cards as $card) 
 												<div class="inline">
 													<input class="form-check-input" type="radio" value="{{ $card->remark }}" name="dev_four" id="dev_four" required>

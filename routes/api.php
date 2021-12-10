@@ -22,13 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 /*  Profile users */
-
-
 Route::prefix('students')->group(function(){
 
     Route::get('users', [StudentLogin::class, 'getUsers']);
     Route::get("user/{id}", [StudentLogin::class, 'getUser']);
-    
+
 });
 
 
